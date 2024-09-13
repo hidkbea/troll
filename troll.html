@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falha no sistema</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 20%;
+            animation: colorGlitch 0.1s infinite;
+        }
+        .warning {
+            font-size: 24px;
+        }
+        .hacked {
+            font-size: 50px;
+            color: lime;
+            margin-top: 20px;
+            animation: shake 0.5s infinite;
+        }
+        .message {
+            margin-top: 50px;
+            font-size: 18px;
+            color: white;
+        }
+        .remove-box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-top: 50px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .binary {
+            font-size: 20px;
+            line-height: 1.5;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: binaryStream 2s linear infinite;
+        }
+        .final-message {
+            display: none;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Efeito de texto de código binário passando */
+        @keyframes binaryStream {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+
+        /* Efeito de tela tremendo */
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="warning">⚠️ CAIU NO MEU GOLPE⚠️</div>
+    <div class="hacked">HACKEEI TEU CELULAR!</div>
+    <div class="message">Todo o seu dispositivo foi comprometido.<br>Seus dados estão sendo transferidos...</div>
+ <body>
+    <div class="binary">
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+    </div>
+
+    <div class="final-message">
+        😃 Upload finalizado com sucesso!
+    </div>
+
+    <script>
+        // Simulação de tremor da tela
+        document.body.style.animation = 'shake 0.5s infinite';
+
+        setTimeout(function() {
+            // Para o tremor da tela após 3 segundos
+            document.body.style.animation = 'none';
+            document.querySelector('.binary').style.visibility = 'hidden'; // Oculta os códigos binários
+            document.querySelector('.final-message').style.display = 'block'; // Exibe a mensagem final
+        }, 3000); // Exibe a mensagem final após 3 segundos
+
+        setTimeout(function() {
+            window.close(); // Fecha a página automaticamente
+        }, 8000); // Fecha a página 5 segundos após a mensagem final aparecer
+    </script>
+</body>
+</html>
