@@ -12,17 +12,16 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
         .binary {
             font-size: 20px;
             line-height: 1.5;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -32,8 +31,11 @@
             display: none;
             color: white;
             font-size: 30px;
-            margin-top: 20px;
             text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         /* Efeito de texto de código binário passando */
@@ -69,10 +71,13 @@
 
     <script>
         setTimeout(function() {
-            document.querySelector('.binary').style.display = 'none';
-            document.querySelector('.final-message').style.display = 'block';
+            document.querySelector('.binary').style.visibility = 'hidden'; // Oculta os códigos binários
+            document.querySelector('.final-message').style.display = 'block'; // Exibe a mensagem final
         }, 2000); // Exibe a mensagem após 2 segundos
 
         setTimeout(function() {
             window.close(); // Fecha a página automaticamente
-        }, 5000); // Fecha a página 3 segundos após a mensagem final
+        }, 5000); // Fecha a página 3 segundos após a mensagem final aparecer
+    </script>
+</body>
+</html>
