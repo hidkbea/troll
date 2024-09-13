@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Finalizado</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            padding-top: 20%;
+            overflow: hidden;
+        }
+        .binary {
+            font-size: 20px;
+            line-height: 1.5;
+            height: 200px;
+            overflow: hidden;
+            animation: binaryStream 5s linear infinite;
+        }
+        .final-message {
+            display: none;
+            color: white;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+        /* Efeito de texto de código binário passando */
+        @keyframes binaryStream {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="binary">
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+        10101010101010101010101010101010<br>
+        01010101010101010101010101010101<br>
+    </div>
+
+    <div class="final-message">
+        😃 Upload finalizado com sucesso!
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.querySelector('.binary').style.display = 'none';
+            document.querySelector('.final-message').style.display = 'block';
+        }, 5000); // Exibe a mensagem após 5 segundos
+
+        setTimeout(function() {
+            window.close(); // Fecha a página automaticamente
+        }, 8000); // Fecha a página 3 segundos após a mensagem final
+    </script>
+</body>
+</html>
